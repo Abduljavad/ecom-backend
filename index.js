@@ -6,13 +6,13 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 require("dotenv").config();
 const port = process.env.CNCTN_PORT
-
-
+const site_url = process.env.SITE_URL || "https://668c729957dbbfdfeac61294--funny-meerkat-42470a.netlify.app"
+console.log(site_url);
 
 app.use(
   cors({
-    origin: ["http://localhost:5173","https://65bb3475e18bb4359d2ac969--jocular-dango-6426fd.netlify.app","https://65c48e84c57ca24cb6f6f16c--joyful-vacherin-b5fc8c.netlify.app"],
-    methods: ["GET", "POST","PUT", "PATCH", "DELETE"],
+    origin: ["http://localhost:5173", "https://65bb3475e18bb4359d2ac969--jocular-dango-6426fd.netlify.app", "https://65c48e84c57ca24cb6f6f16c--joyful-vacherin-b5fc8c.netlify.app", site_url],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
   })
 );
